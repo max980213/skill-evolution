@@ -87,13 +87,13 @@ bign sub(bign a,bign b)
         }
         else if(a.sign==b.sign&&a.sign==1) //都为正
         {
-            for(int i=0;i<a.len||i<a.len;i++)
+            for(int i=0;i<a.len||i<b.len;i++)   //还有bug 未考虑借位为0的情况
             {
                 if(a.d[i]<b.d[i]) //如果不够减
                 {
                     a.d[i+1]--;  //向高位借位（未考虑高位为0的情况）
                     a.d[i]+=10;  //当前位加10
-                    c.d[c.len++]=a.d[i]-b.d[i];
+                    //c.d[c.len++]=a.d[i]-b.d[i];
                 }
                 c.d[c.len++]=a.d[i]-b.d[i];
             }
